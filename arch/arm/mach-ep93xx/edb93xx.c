@@ -50,6 +50,8 @@ static void __init edb93xx_register_flash(void)
 	if (machine_is_edb9307() || machine_is_edb9312() ||
 	    machine_is_edb9315() || machine_is_edb9315a()) {
 		ep93xx_register_flash(4, EP93XX_CS6_PHYS_BASE, SZ_32M);
+        } else if (machine_is_edb9315a()) {
+                ep93xx_register_flash(2, EP93XX_CS6_PHYS_BASE, SZ_32M);
 	} else {
 		ep93xx_register_flash(2, EP93XX_CS6_PHYS_BASE, SZ_16M);
 	}
